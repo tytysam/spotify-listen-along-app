@@ -5,7 +5,7 @@ class QueueManager {
     this.playingContext = {
       track: null,
       user: null,
-      startTimestamp: null;
+      startTimestamp: null,
     };
     this.queue = [];
     this.onQueueChanged = options.onQueueChanged;
@@ -50,7 +50,7 @@ class QueueManager {
   }
 
   removeId(user, id) {
-    const index = this.queue.findIndex(item => item.id === id);
+    const index = this.queue.findIndex((item) => item.id === id);
     if (index !== -1 && this.queue[index].user.id === user.id) {
       this.queue.splice(index, 1);
       this.handleQueueChanged();
@@ -71,11 +71,11 @@ class QueueManager {
         track: queueItem.track,
         user: queueItem.user,
         startTimestamp: Date.now(),
-        voters: queueItem.voters
+        voters: queueItem.voters,
       };
       this.playedHistory.push({
         track: queueItem.track,
-        user: queueItem.user
+        user: queueItem.user,
       });
       setTimeout(() => {
         this.play();
@@ -86,7 +86,7 @@ class QueueManager {
         track: null,
         user: null,
         startTimestamp: null,
-        voters: []
+        voters: [],
       };
 
       this.onQueueEnded();
@@ -94,13 +94,13 @@ class QueueManager {
   }
 
   voteUpI(user, id) {
-    const index = this.queue.findIndex(item => item.id === id);
+    const index = this.queue.findIndex((item) => item.id === id);
     if (index === -1) {
       return false;
     }
     const voters = this.queue[index].voters;
     if (voters) {
-      const userVotes = voters.filter(voter => voter.id === user.id);
+      const userVotes = voters.filter((voter) => voter.id === user.id);
       if (userVotes.length === 0) {
         this.queue[index].voters.push(user);
         this.handleQueueChanged();
@@ -108,13 +108,13 @@ class QueueManager {
       }
     }
   }
-  
+
   save() {
     fs.writeFileSync(
       `./queue.json`,
       JSON.stringify({
         playingContext: this.playingContext,
-        queue: this.queue
+        queue: this.queue,
       }),
       ``
     );
