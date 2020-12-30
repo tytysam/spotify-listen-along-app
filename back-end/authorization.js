@@ -3,8 +3,8 @@ const querystring = require("querystring");
 const request = require("request");
 
 const Router = express.Router;
-const AppConfig = require("./config/app.js");
-const AuthConfig = require("./config/authorization.js");
+const AppConfig = require("../config/app.js");
+const AuthConfig = require("../config/authorization.js");
 
 // HOST is currently set to localhost:3000
 const redirect_uri = `${AppConfig.HOST}/auth/callback`;
