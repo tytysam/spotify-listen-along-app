@@ -2,7 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const SpotifyWebAPI = require("spotify-web-api-node");
 
-const AuthConfig = require("./config/auth.js");
+const AuthConfig = require("./config/authorization.js");
 
 const Robot = require("./models/Robot.js");
 const QueueItem = require("./models/QueueItem.js");
