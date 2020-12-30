@@ -1,6 +1,6 @@
 class Robot {
   constructor(options) {
-    this.image = options.image || "/static/robot-icon.png";
+    this.image = options.image || "/images/robot-icon.png";
     this.id = options.id || "Robot";
     this.recommendations = {};
   }

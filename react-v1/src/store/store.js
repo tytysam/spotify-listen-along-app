@@ -1,3 +1,5 @@
+// * note: A Redux store runs the root reducer whenever an action is dispatched
+
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
@@ -19,6 +21,8 @@ export const initStore = (initialState = {}) => {
     initialState,
     applyMiddleware(
       thunk,
+      // THUNK is a specific kind of Redux function that can contain asynchronous logic
+      // This Redux Thunk middleware modifies the store to let us pass functions into DISPATCH
       devicesMiddlware,
       loggerMiddleware,
       playbackMiddleware,

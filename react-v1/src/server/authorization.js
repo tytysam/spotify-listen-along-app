@@ -1,3 +1,6 @@
+// Ref: https://developer.spotify.com/documentation/general/guides/authorization-guide/
+// Ref: https://developer.spotify.com/documentation/general/guides/scopes/
+
 const express = require("express");
 const querystring = require("querystring");
 const request = require("request");

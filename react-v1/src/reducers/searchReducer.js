@@ -1,3 +1,5 @@
+// * note: Reducers are functions that calculate a new state value based on previous state + an action
+
 import {
   SEARCH_TRACKS,
   SEARCH_TRACKS_SUCCESS,

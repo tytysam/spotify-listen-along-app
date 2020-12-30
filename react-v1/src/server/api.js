@@ -1,5 +1,4 @@
 const express = require("express");
-const fs = require("fs");
 const SpotifyWebAPI = require("spotify-web-api-node");
 
 const AuthConfig = require("../config/authorization.js");

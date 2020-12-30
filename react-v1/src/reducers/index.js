@@ -1,3 +1,5 @@
+// * note: Reducers are functions that calculate a new state value based on previous state + an action
+
 import { combineReducers } from "redux";
 
 import devicesReducer from "../reducers/devicesReducer.js";
@@ -8,7 +10,11 @@ import sessionReducer from "../reducers/sessionReducer.js";
 import usersReducer from "../reducers/usersReducer.js";
 
 export const reducers = () => {
+  // pass through an object containing our slice reducers...
   combineReducers({
+    // combineReducers will call each slice reducer individually,
+    // pass in the specific slice of the Redux state,
+    // and include each return value in the final new Redux state object
     queue: queueReducer,
     playback: playbackReducer,
     session: sessionReducer,
