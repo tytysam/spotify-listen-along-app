@@ -1,14 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import ButtonStyle from "./ButtonStyle.js";
-import ButtonDarkStyle from "./ButtonDarkStyle.js";
 import {
   fetchAvailableDevices,
   transferPlaybackToDevice,
 } from "../actions/devicesActions.js";
 import { getDevices } from "../reducers/devicesReducer.js";
 import { getIsFetchingDevices } from "../reducers/index.js";
+
+// ================= //
+//      DEVICES      //
+// ================= //
 
 class Devices extends React.PureComponent {
   // * note: React.Component vs React.PureComponent... PureComponent does a SHALLOW COMPARISON on state change
@@ -23,10 +25,8 @@ class Devices extends React.PureComponent {
     return (
       <div style={{ paddingBottom: "10px" }}>
         <h2>{devices.title}</h2>
-        <style jsx>{ButtonStyle}</style>
-        <style jsx>{ButtonDarkStyle}</style>
         <button
-          className="btn btn--dark"
+          className="btn--base btn--dark"
           disabled={isFetching}
           onClick={() => {
             fetchAvailableDevices();

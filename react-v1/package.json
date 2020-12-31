@@ -35,7 +35,6 @@
     "socket.io": "^3.0.4",
     "socket.io-client": "^3.0.4",
     "spotify-web-api-node": "^5.0.0",
-    "styled-jsx": "^3.3.2",
     "uuid": "^8.3.2",
     "web-vitals": "^0.2.4"
   },

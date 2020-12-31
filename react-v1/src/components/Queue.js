@@ -5,6 +5,10 @@ import QueueItem from "./QueueItem.js";
 import { queueRemoveTrack } from "../actions/queueActions.js";
 import { voteUp } from "../actions/voteActions.js";
 
+// ================= //
+//       QUEUE       //
+// ================= //
+
 class Queue extends React.PureComponent {
   // * note: React.Component vs React.PureComponent... PureComponent does a SHALLOW COMPARISON on state change
   render() {
@@ -16,11 +20,6 @@ class Queue extends React.PureComponent {
           <p>Queue is empty...</p>
         ) : (
           <table className="queue">
-            <style jsx>{`
-              .queue {
-                max-width: 550px;
-              }
-            `}</style>
             <tbody>
               {items.map((i, index) => (
                 <QueueItem

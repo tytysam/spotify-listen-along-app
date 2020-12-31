@@ -12,6 +12,10 @@ import AddToQueue from "../components/AddToQueue.js";
 import NowPlaying from "../components/NowPlaying.js";
 import Devices from "../components/Devices.js";
 
+// ================= //
+//        MAIN       //
+// ================= //
+
 class Main extends React.Component {
   static defaultProps({ req, store, isServer }) {
     return Promise.all([
@@ -31,20 +35,12 @@ class Main extends React.Component {
           />
         ) : null}
         <div className="app">
-          <style jsx>
-            {`
-              .app {
-                margin: 20px;
-                padding: 20px;
-              }
-            `}
-          </style>
-          <div style={{ float: "left" }}>
+          <div className="queue-container">
             <Queue items={this.props.queue} session={this.props.session} />
             {this.props.session.user !== null ? <AddToQueue /> : null}
             {this.props.session.user !== null ? <Devices /> : null}
           </div>
-          <div style={{ float: "right", width: "150px" }}>
+          <div className="users-container">
             <Users items={this.props.users} />
           </div>
         </div>
@@ -60,6 +56,4 @@ const mapStateToProps = (state) => ({
   session: state.session,
 });
 
-// export default connect(initStore, mapStateToProps, null)(Main);
-
-export default connect(mapStateToProps, null)(Main);
+export default connect(initStore, mapStateToProps, null)(Main);

@@ -1,11 +1,15 @@
 import React from "react";
 
+// ================= //
+//    QUEUE ITEM     //
+// ================= //
+
 export default ({ index, item, session, onRemoveItem, onVoteUp }) => {
   const voteUp =
     item.voters &&
     session.user &&
     item.voters.filter((voter) => voter.id === session.user.id).length === 0 ? (
-      <button onClick={onVoteUp}>▲</button>
+      <button onClick={onVoteUp}> ▲ </button>
     ) : null;
   return (
     <tr>

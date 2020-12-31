@@ -1,6 +1,8 @@
 {
-  "name": "my-app",
+  "name": "listen-along",
   "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
   "private": true,
   "scripts": {
     "dev": "next dev",

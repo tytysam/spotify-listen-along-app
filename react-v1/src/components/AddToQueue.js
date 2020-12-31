@@ -4,40 +4,15 @@ import { connect } from "react-redux";
 import { searchTracks, searchTracksReset } from "../actions/searchActions.js";
 import { queueTrack } from "../actions/queueActions.js";
 
+// ================= //
+//   SEARCH RESULTS  //
+// ================= //
+
 class ResultsList extends React.Component {
   render() {
     const { results, focus } = this.props;
     return (
       <ul className="add-to-queue__search-results">
-        <style jsx>{`
-          .add-to-queue__search-results {
-            border: 1px solid #999;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-          }
-          .add-to-queue__search-results-item {
-            padding: 5px 0 5px 5px;
-          }
-          .add-to-queue__search-results-item--focused {
-            background-color: #eee;
-          }
-          .container {
-            display: flex;
-          }
-          .album-img {
-            width: 64;
-            padding-right: 1em;
-          }
-          .flex-item {
-            flex-grow: 1;
-          }
-
-          .song-name {
-            font-size: 1.3em;
-            margin-bottom: 0.3em;
-          }
-        `}</style>
         {results.map((r, index) => {
           const isFocused = focus === index;
           const className =
@@ -65,6 +40,10 @@ class ResultsList extends React.Component {
     );
   }
 }
+
+// ================ //
+//   ADD TO QUEUE   //
+// ================ //
 
 class AddToQueue extends React.Component {
   state = {
@@ -131,12 +110,6 @@ class AddToQueue extends React.Component {
     const results = this.props.search.results;
     return (
       <div className="add-to-queue">
-        <style jsx>{`
-          .add-to-queue__input {
-            padding: 5px;
-            width: 400px;
-          }
-        `}</style>
         <input
           className="add-to-queue__input"
           placeholder="placeholder..."
