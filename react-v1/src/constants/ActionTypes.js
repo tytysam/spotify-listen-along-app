@@ -1,4 +1,4 @@
-// Spotify Api + Redux Documentation...
+// REF: https://redux.js.org/tutorials/fundamentals/part-1-overview
 
 export const QUEUE_TRACK = "QUEUE_TRACK";
 export const UPDATE_QUEUE = "UPDATE_QUEUE";

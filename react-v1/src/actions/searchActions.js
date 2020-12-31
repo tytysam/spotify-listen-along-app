@@ -1,5 +1,4 @@
 // * note: Actions in Redux are plain objects with a TYPE field, and describe "what happened" in the app
-
 import * as types from "../constants/ActionTypes.js";
 
 // =============== //
@@ -17,6 +16,9 @@ export const searchTracksReset = () => ({
   type: types.SEARCH_TRACKS_RESET,
 });
 
+// =============== //
+//      FETCH      //
+// =============== //
 export const fetchTrack = (id) => ({ type: types.FETCH_TRACK, id });
 
 export const fetchTrackSuccess = (id, track) => ({

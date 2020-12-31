@@ -1,5 +1,6 @@
 // Ref: https://developer.spotify.com/documentation/general/guides/authorization-guide/
 // Ref: https://developer.spotify.com/documentation/general/guides/scopes/
+// Ref: https://developer.spotify.com/documentation/web-api/reference-beta/
 
 const express = require("express");
 const querystring = require("querystring");
@@ -9,7 +10,7 @@ const Router = express.Router;
 const AppConfig = require("../config/app.js");
 const AuthConfig = require("../config/authorization.js");
 
-// HOST is currently set to localhost:3000
+// HOST is currently set to localhost:3007
 const redirect_uri = `${AppConfig.HOST}/auth/callback`;
 const client_id = AuthConfig.CLIENT_ID;
 const client_secret = AuthConfig.CLIENT_SECRET;

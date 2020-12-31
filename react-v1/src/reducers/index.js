@@ -2,12 +2,12 @@
 
 import { combineReducers } from "redux";
 
-import devicesReducer from "../reducers/devicesReducer.js";
-import playbackReducer from "../reducers/playbackReducer.js";
-import queueReducer from "../reducers/queueReducer.js";
-import searchReducer from "../reducers/searchReducer.js";
-import sessionReducer from "../reducers/sessionReducer.js";
-import usersReducer from "../reducers/usersReducer.js";
+import devicesReducer, * as fromDevices from "./devicesReducer.js";
+import playbackReducer from "./playbackReducer.js";
+import queueReducer from "./queueReducer.js";
+import searchReducer from "./searchReducer.js";
+import sessionReducer from "./sessionReducer.js";
+import usersReducer from "./usersReducer.js";
 
 export const reducers = () => {
   // pass through an object containing our slice reducers...

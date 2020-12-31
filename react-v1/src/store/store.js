@@ -5,7 +5,7 @@ import thunk from "redux-thunk";
 
 import { reducers } from "../reducers";
 
-import devicesMiddlware from "../middleware/devicesMiddleware.js";
+import devicesMiddleware from "../middleware/devicesMiddleware.js";
 import loggerMiddleware from "../middleware/loggerMiddleware.js";
 import playbackMiddleware from "../middleware/playbackMiddleware";
 import searchMiddleware from "../middleware/searchMiddleware.js";
@@ -23,7 +23,7 @@ export const initStore = (initialState = {}) => {
       thunk,
       // THUNK is a specific kind of Redux function that can contain asynchronous logic
       // This Redux Thunk middleware modifies the store to let us pass functions into DISPATCH
-      devicesMiddlware,
+      devicesMiddleware,
       loggerMiddleware,
       playbackMiddleware,
       searchMiddleware,

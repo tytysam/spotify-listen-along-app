@@ -7,7 +7,7 @@ import {
   updateTokenSuccess,
 } from "../actions/sessionActions.js";
 
-import * as Config from "../../../config/app.js";
+import * as Config from "../config/app.js";
 
 const SPOTIFY_API_BASE = "https://api.spotify.com/v1";
 

@@ -1,8 +1,7 @@
 // * note: Actions in Redux are plain objects with a TYPE field, and describe "what happened" in the app
-
 import fetch from "isomorphic-unfetch";
 
-import Config from "../../../config/app.js";
+import Config from "../config/app.js";
 import * as types from "../constants/ActionTypes.js";
 
 // =============== //

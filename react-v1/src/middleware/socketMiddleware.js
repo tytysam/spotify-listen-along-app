@@ -1,3 +1,5 @@
+// REF: https://socket.io/get-started
+
 import {
   VOTE_UP,
   LOGIN_SUCCESS,
@@ -7,7 +9,7 @@ import {
 import { updateUsers } from "../actions/usersActions.js";
 import { updateQueue, queueEnded } from "../actions/queueActions.js";
 import { playTrack, updateNowPlaying } from "../actions/playbackActions.js";
-import Config from "../../../config/app.js";
+import Config from "../config/app.js";
 
 import io from "socket.io-client";
 
