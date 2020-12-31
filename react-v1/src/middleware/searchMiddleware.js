@@ -1,3 +1,6 @@
+// REF: https://developer.spotify.com/documentation/web-api/reference/
+// REF: https://developer.spotify.com/documentation/web-api/reference/search/search/
+
 import fetch from "isomorphic-unfetch";
 
 import { SEARCH_TRACKS } from "../constants/ActionTypes.js";
@@ -5,9 +8,15 @@ import { searchTracksSuccess } from "../actions/searchActions.js";
 
 const SPOTIFY_API_BASE = "https://api.spotify.com/v1";
 
+// ================= //
+//      SEARCH       //
+// ================= //
+
 const searchTracks = (query) => (dispatch, getState) => {
-  // *** FOUND THE BELOW ON STACK OVERFLOW AS A TRICK TO IMPROVE SEARCH RESULTS USING A WILDCARD
-  // *** NOT WRITTEN BY TCS ***
+  // *** FOUND THE BELOW RE:  *wildcards*  ON STACK OVERFLOW AS A "trick to improve search results"
+  // ================================
+  // *** START - NOT WRITTEN BY TCS ***
+
   let shouldAddWildcard = false;
   if (query.length > 1) {
     const words = query.split(" ");
@@ -27,7 +36,8 @@ const searchTracks = (query) => (dispatch, getState) => {
       wildcardQuery
     )}&type=track&limit=10`,
     {
-      // *** END CODE NOT WRITTEN BY TCS ***
+      // *** END - NOT WRITTEN BY TCS ***
+      // ================================
 
       headers: {
         Authorization: `Bearer ` + getState().session.access_token,

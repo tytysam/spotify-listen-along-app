@@ -1,3 +1,8 @@
+// REF: https://developer.spotify.com/documentation/web-api/reference/
+// REF: https://developer.spotify.com/documentation/web-api/reference/users-profile/get-current-users-profile/
+// REF: https://developer.spotify.com/documentation/general/guides/authorization-guide/
+// REF: https://developer.spotify.com/documentation/general/guides/scopes/
+
 import fetch from "isomorphic-unfetch";
 
 import { LOAD, LOGIN } from "../constants/ActionTypes.js";
@@ -10,6 +15,10 @@ import {
 import * as Config from "../config/app.js";
 
 const SPOTIFY_API_BASE = "https://api.spotify.com/v1";
+
+// ================= //
+//     SESSION       //
+// ================= //
 
 const getCurrentUser = () => (dispatch, getState) =>
   fetch(`${SPOTIFY_API_BASE}/me`, {
@@ -108,8 +117,13 @@ export default (store) => (next) => (action) => {
       };
       window.addEventListener("message", messageFunc, false);
 
+      // SCOPES:
+      // ==> • user-read-playback-state | Read access to a user's player state
+      // ==> • user-modify-playback-state | Write access to a user's playback state
       const url = getLoginURL([
         `user-read-playback-state`,
+        // *** to-do: figure out if below should be modified or modify???
+        // I've seen both.. assuming one is deprecated?
         `user-modified-playback-state`,
       ]);
       window.open(

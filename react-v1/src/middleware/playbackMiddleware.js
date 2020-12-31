@@ -1,3 +1,7 @@
+// REF: https://developer.spotify.com/documentation/web-api/reference/
+// REF: https://developer.spotify.com/documentation/web-api/reference/player/
+// REF: https://developer.spotify.com/documentation/web-api/reference/player/seek-to-position-in-currently-playing-track/
+
 import fetch from "isomorphic-unfetch";
 
 import { PLAY_TRACK, UNMUTE_PLAYBACK } from "../constants/ActionTypes.js";
@@ -5,9 +9,14 @@ import { playTrack, playTrackSuccess } from "../actions/playbackActions.js";
 
 const SPOTIFY_API_BASE = "https://api.spotify.com/v1";
 
+// ================= //
+//     PLAYBACK      //
+// ================= //
+
 export default (store) => (next) => (action) => {
   const result = next(action);
   switch (action.type) {
+    // Play track...
     case PLAY_TRACK: {
       if (process.browser && !store.getState().playback.muted) {
         fetch(`${SPOTIFY_API_BASE}/me/player/play`, {
@@ -42,6 +51,7 @@ export default (store) => (next) => (action) => {
       }
       break;
     }
+    // Toggle mute...
     case UNMUTE_PLAYBACK: {
       const { track, user, position, startTime } = store.getState().playback;
       const currentPosition = Date.now() - startTime + position;

@@ -1,5 +1,15 @@
 // REF: https://redux.js.org/tutorials/fundamentals/part-1-overview
 
+// * note: according to @dan_abramov... creating all of our constants here has a few benefits:
+// ==> • It helps keep the naming consistent because all action types are gathered in a single place
+// ==> • Sometimes you want to see all existing actions before working on a new feature. It may be that the action you need was already added by somebody on the team, but you didn't know.
+// ==> • The list of action types that were added, removed, or changed in a Pull Request helps everyone on the team keep track of scope and implementation of new features
+// ==> • If you make a typo when importing an action constant, you will get undefined. This is much easier to notice than a typo when you wonder why nothing happens when the action is dispatached.
+
+// ================================== //
+//     ACTION TYPES as CONSTANTS      //
+// ================================== //
+
 export const QUEUE_TRACK = "QUEUE_TRACK";
 export const UPDATE_QUEUE = "UPDATE_QUEUE";
 export const QUEUE_ENDED = "QUEUE_ENDED";

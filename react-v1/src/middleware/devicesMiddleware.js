@@ -1,3 +1,6 @@
+// REF: https://developer.spotify.com/documentation/web-api/reference/
+// REF: https://developer.spotify.com/documentation/web-api/reference/player/
+
 import fetch from "isomorphic-unfetch";
 
 import {
@@ -15,9 +18,14 @@ import {
 
 const SPOTIFY_API_BASE = "https://api.spotify.com/v1";
 
+// ================= //
+//      DEVICES      //
+// ================= //
+
 export default (store) => (next) => (action) => {
   const result = next(action);
   switch (action.type) {
+    // Retrieve a list of available devices
     case FETCH_AVAILABLE_DEVICES: {
       fetch(`${SPOTIFY_API_BASE}/me/player/devices`, {
         method: "GET",
@@ -35,6 +43,8 @@ export default (store) => (next) => (action) => {
         });
       break;
     }
+
+    // Set playback to "COLLABORATIVE" by selecting a device ("Collaborative" will be one)
     case TRANSFER_PLAYBACK_TO_DEVICE: {
       fetch(`${SPOTIFY_API_BASE}/me/player`, {
         method: "PUT",
@@ -57,6 +67,7 @@ export default (store) => (next) => (action) => {
       break;
     }
 
+    // DEFAULT: Do nothing...
     default:
       break;
   }
