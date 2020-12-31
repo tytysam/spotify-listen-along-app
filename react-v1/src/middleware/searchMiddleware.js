@@ -53,10 +53,13 @@ const searchTracks = (query) => (dispatch, getState) => {
 export default (store) => (next) => (action) => {
   const result = next(action);
   switch (action.type) {
+    // Search tracks...
     case SEARCH_TRACKS: {
       return store.dispatch(searchTracks(action.query));
       break;
     }
+
+    // DEFAULT: Do nothing...
     default:
       break;
   }

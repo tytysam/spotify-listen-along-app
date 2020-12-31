@@ -51,6 +51,7 @@ export default (store) => (next) => (action) => {
       }
       break;
     }
+
     // Toggle mute...
     case UNMUTE_PLAYBACK: {
       const { track, user, position, startTime } = store.getState().playback;
@@ -58,6 +59,8 @@ export default (store) => (next) => (action) => {
       store.dispatch(playTrack(track, user, currentPosition));
       break;
     }
+
+    // DEFAULT: Do nothing...
     default:
       break;
   }

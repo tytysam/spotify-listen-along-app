@@ -51,6 +51,7 @@ const updateToken = () => (dispatch, getState) => {
 export default (store) => (next) => (action) => {
   const result = next(action);
   switch (action.type) {
+    // Load auth for user...
     case LOAD: {
       const session = store.getState().session;
       const expiresIn = session.expires_in;
@@ -78,6 +79,8 @@ export default (store) => (next) => (action) => {
       }
       break;
     }
+
+    // Login user...
     case LOGIN: {
       const getLoginURL = (scopes) => {
         return `${Config.HOST}/auth/login?scope=${encodeURIComponent(
@@ -111,7 +114,6 @@ export default (store) => (next) => (action) => {
             }
           }
         } catch (err) {
-          // do nothing
           console.error(err);
         }
       };
@@ -141,6 +143,7 @@ export default (store) => (next) => (action) => {
       break;
     }
 
+    // DEFAULT: Do nothing...
     default:
       break;
   }
