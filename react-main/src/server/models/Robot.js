@@ -1,4 +1,6 @@
+// REF: https://developer.spotify.com/use-cases/mobile-apps/content-recommendations/
 // REF: https://developer.spotify.com/documentation/web-api/reference/browse/get-recommendations/
+// REF: https://stackoverflow.com/questions/17874851/can-i-use-the-spotify-recommendation-intelligence-in-an-app
 
 class Robot {
   constructor(options) {

@@ -124,9 +124,7 @@ export default (store) => (next) => (action) => {
       // ==> • user-modify-playback-state | Write access to a user's playback state
       const url = getLoginURL([
         `user-read-playback-state`,
-        // *** to-do: figure out if below should be modified or modify???
-        // I've seen both.. assuming one is deprecated?
-        `user-modified-playback-state`,
+        `user-modify-playback-state`,
       ]);
       window.open(
         url,

@@ -7,7 +7,7 @@ import { initStore } from "./store/store.js";
 import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 
-// initStore() initiates an instance of our store and sets our initial state (...essentially the same as configureStore()?)
+// initStore() initiates an instance of our store and sets our initial state
 const store = initStore();
 
 ReactDOM.render(

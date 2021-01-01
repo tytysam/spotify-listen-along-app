@@ -1,6 +1,7 @@
 // Ref: https://developer.spotify.com/documentation/general/guides/authorization-guide/
 // Ref: https://developer.spotify.com/documentation/general/guides/scopes/
 // Ref: https://developer.spotify.com/documentation/web-api/reference-beta/
+// REF: https://levelup.gitconnected.com/how-to-build-a-spotify-player-with-react-in-15-minutes-7e01991bc4b6
 
 const express = require("express");
 const querystring = require("querystring");
@@ -10,18 +11,15 @@ const Router = express.Router;
 const AppConfig = require("../config/app.js");
 const AuthConfig = require("../config/authorization.js");
 
-// HOST is currently set to localhost:3007
 const redirect_uri = `${AppConfig.HOST}/auth/callback`;
 const client_id = AuthConfig.CLIENT_ID;
 const client_secret = AuthConfig.CLIENT_SECRET;
 
 let auth = Router();
 
-/*
- * Generates a random string containing numbers and letters
- * @param  {length} The length of the string
- * @return {text} The generated string
- */
+// Generates a random string containing numbers and letters
+// {length} ==> The length of the string
+// {text} ==> The generated string
 const generateRandomString = (length) => {
   let text = "";
   let possibleText =
@@ -37,11 +35,16 @@ const generateRandomString = (length) => {
 
 const stateKey = "spotify_auth_state";
 
+// ================= //
+//   AUTH REQUEST    //
+// ================= //
 auth.get("/login", (req, res) => {
   let state = generateRandomString(16);
   res.cookie(stateKey, state);
 
-  // your application requests authorization
+  // SCOPES:
+  // ==> • user-read-playback-state | Read access to a user's player state
+  // ==> • user-modify-playback-state | Write access to a user's playback state
   let scope = "user-read-playback-state user-modify-playback-state";
   res.redirect(
     "https://accounts.spotify.com/authorize?" +
@@ -55,9 +58,10 @@ auth.get("/login", (req, res) => {
   );
 });
 
+// ================= //
+//  TOKEN CALLBACK   //
+// ================= //
 auth.get("/callback", (req, res) => {
-  // your application should request refresh and access tokens after checking the state parameter
-
   let code = req.query.code || null;
   let state = req.query.state || null;
   let storedState = req.cookies ? req.cookies[stateKey] : null;
@@ -116,6 +120,9 @@ auth.get("/callback", (req, res) => {
   }
 });
 
+// ================= //
+//   AUTH GRANTED    //
+// ================= //
 auth.post("/token", (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   let refreshToken = req.body ? req.body.refresh_token : null;

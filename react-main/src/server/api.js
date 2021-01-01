@@ -1,3 +1,9 @@
+// REF: https://socket.io/docs/v3
+// REF: https://socket.io/docs/v3/server-initialization/
+// REF: https://socket.io/docs/v3/server-socket-instance/
+// REF: https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow
+// REF: https://developer.spotify.com/documentation/general/guides/authorization-guide/
+
 const express = require("express");
 const SpotifyWebAPI = require("spotify-web-api-node");
 
@@ -13,6 +19,10 @@ const spotifyApi = new SpotifyWebAPI({
 });
 
 const Router = express.Router;
+
+// ================= //
+//        AUTH       //
+// ================= //
 
 let accessToken = null;
 
@@ -36,7 +46,7 @@ const fetchNewToken = (callback) => {
     });
 };
 
-// Returns a new token OR the cached on is still valid
+// Returns a new token OR the cached one is still valid
 const getToken = (callback) => {
   if (accessToken !== null) {
     callback && callback(accessToken);
@@ -45,15 +55,21 @@ const getToken = (callback) => {
   }
 };
 
+// Initialize our Recommender Robot
 const robotUser = new Robot({
   getToken: getToken,
   spotifyApi: spotifyApi,
 });
 
+// Add our Recommender Robot to our users array. He'll always be in the room. Always. :)
 let users = [robotUser.toJSON()];
 
 let globalSocket = null;
 let globalIo = null;
+
+// ======================= //
+//      QUEUE MANAGER      //
+// ======================= //
 
 const queueManager = new QueueManager({
   onPlay: () => {
@@ -63,28 +79,36 @@ const queueManager = new QueueManager({
     users.forEach((user) => {
       user.socketIdArray.forEach((socketId, index) => {
         if (index === 0) {
+          // Send our "play track" event
           globalIo.to(socketId).emit("play track", track, user);
         } else {
+          // Send our "update now playing" event
           globalIo.to(socketId).emit("update now playing", track, user);
         }
       });
     });
   },
+
+  // Send our "update queue" event
   onQueueChanged: () => {
     globalSocket && globalSocket.emit("update queue", queueManager.getQueue());
     globalSocket &&
       globalSocket.broadcast.emit("update queue", queueManager.getQueue());
   },
+
+  // Send our "update queue" event
   onQueueEnded: async () => {
     globalSocket && globalSocket.emit("update queue", queueManager.getQueue());
     globalSocket &&
       globalSocket.broadcast.emit("update queue", queueManager.getQueue());
 
+    // Since our queue is empty, have Robot generate a recommendation based on Spotify seeds
     const robotRecommendation = await robotUser.generateRecommendation(
       queueManager.playedHistory,
       getToken,
       spotifyApi
     );
+    // As long as Robot returns a recommendation, add the recommended item to our queue
     if (robotRecommendation !== null) {
       queueManager.addItem(
         new QueueItem({
@@ -131,10 +155,17 @@ const exportedApi = (io) => {
     }
   });
 
-  // WEB SOCKET INTERFACE
-  // socket.io
+  // ======================= //
+  //   SOCKET.IO INTERFACE   //
+  // ======================= //
+  // * note: The socket object on both sides (server + client) extends the EventEmitter class, so...
+  // ==> • socket.emit() sends our event
+  // ==> • socket.on() receives our event by registering a listener
+
   io.on("connection", (socket) => {
     globalSocket = socket;
+
+    // Listen for "queue track" event
     socket.on("queue track", (trackId) => {
       console.log("queueing track " + trackId);
       getToken(() => {
@@ -154,14 +185,17 @@ const exportedApi = (io) => {
       });
     });
 
+    // Listen for "vote up" event
     socket.on("vote up", (id) => {
       queueManager.voteUpId(socket.user, id);
     });
 
+    // Listen for "remove track" event
     socket.on("remove track", (id) => {
       queueManager.removeId(socket.user, id);
     });
 
+    // Listen for "user login" event
     socket.on("user login", (user) => {
       let index = -1;
       users.forEach((u, i) => {
@@ -172,17 +206,21 @@ const exportedApi = (io) => {
 
       socket.user = user;
       if (index !== -1) {
-        // the user has already logged-in, add their socketId into sockets
+        // if the user has already loggedin...
+
+        // then add their socketId into sockets
         users[index].socketIdArray.push(socket.id);
       } else {
         // otherwise... the user must not have logged-in yet
         users.push(Object.assign({}, user, { socketIdArray: [socket.id] }));
+        // Send our "update users" event
         socket.emit("update users", users);
         socket.broadcast.emit("update users", users);
 
         // check to see if user should start playing something
         const playingContext = queueManager.getPlayingContext();
         if (playingContext.track !== null) {
+          // Send our "play track" event
           socket.emit(
             "play track",
             playingContext.track,
@@ -193,10 +231,12 @@ const exportedApi = (io) => {
       }
     });
 
+    // Listen for "disconnect" event
     socket.on("disconnect", () => {
       console.log("disconnect " + socket.id);
       let userIndex = -1;
       let socketIdIndex = -1;
+      // Update the rest of the users + their indices
       users.forEach((user, i) => {
         user.socketIdArray.forEach((socketId, j) => {
           if (socketId === socket.id) {
@@ -205,17 +245,21 @@ const exportedApi = (io) => {
         });
       });
 
+      // if user is logged in...
       if (userIndex !== -1 && socketIdIndex !== -1) {
+        // if there are other users logged in as well...
         if (users[userIndex].socketIdArray.length > 1) {
-          // remove socketId from socketIdArray
+          // then remove socketId from socketIdArray
           users[userIndex].socketIdArray.splice(socketIdIndex, 1);
         } else {
           // otherwise... remove user from users
           users.splice(userIndex, 1);
+          // Send our "update users" event
           socket.emit(
             "update users",
             users.map((u) => u.user)
           );
+          // Send our "update users" event
           socket.broadcast.emit(
             "update users",
             users.map((u) => u.user)

@@ -1,5 +1,6 @@
 // REF: https://developer.spotify.com/documentation/web-api/reference/
 // REF: https://developer.spotify.com/documentation/web-api/reference/player/
+// REF: https://developer.spotify.com/documentation/web-api/guides/using-connect-web-api/
 
 import fetch from "isomorphic-unfetch";
 

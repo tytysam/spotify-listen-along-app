@@ -1,7 +1,9 @@
+// REF: https://socket.io/docs/v3/server-initialization/
+// REF: https://developer.spotify.com/documentation/general/guides/authorization-guide/
+
 require("dotenv").config();
 
-const express = require("express");
-const app = express();
+const app = require("express")();
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
 const compression = require("compression");
@@ -35,8 +37,14 @@ app.prepare().then(() => {
   app.use("/auth", auth);
   app.use("/api", api(io));
 
+  // *** to-do: 404???
+
   server.listen(process.env.PORT || 3000, (err) => {
     if (err) throw err;
-    console.log(`> Ready on http://localhost:${process.env.PORT || 3000}`);
+    console.log(
+      `Dude, let's surf the interwebs | Listening on port: ${
+        process.env.PORT || 3000
+      }`
+    );
   });
 });

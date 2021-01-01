@@ -1,3 +1,5 @@
+// REF: https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers
+// REF: https://redux.js.org/tutorials/fundamentals/part-4-store
 // * note: A Redux store runs the root reducer whenever an action is dispatched
 
 import { createStore, applyMiddleware } from "redux";
@@ -14,6 +16,10 @@ import socketMiddlewareDefault from "../middleware/socketMiddleware.js";
 import { socketMiddleware } from "../middleware/socketMiddleware.js";
 
 import { load } from "../actions/sessionActions.js";
+
+// ================= //
+//       STORE       //
+// ================= //
 
 export const initStore = (initialState = {}) => {
   const store = createStore(
