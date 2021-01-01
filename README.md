@@ -1,6 +1,6 @@
-# LSTN ALNG - A Spotify-based listening room for you and your friends
+# LSTN ALNG - Music should be shared.
 
-Listen Along is bringing back listening rooms. Intimate opportunities to share music with your friends. A shared queue can be added to and edited by anyone present in the listening room. Vote songs up the queue and jam synchronously together—-even when you can't be together.
+Listen Along is bringing back listening rooms. Intimate opportunities to share and experience music with your friends. A shared queue can be added to and edited by anyone present in the listening room. Vote songs up the queue and jam synchronously together via Spotify—-even when you can't be together.
 
 <!-- **Link to site:** https://tytysam.github.io/TheBoys_Supe-r_Destruction/ -->
 
