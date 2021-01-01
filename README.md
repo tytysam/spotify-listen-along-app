@@ -26,13 +26,14 @@ Listen Along is bringing back listening rooms. Intimate opportunities to share a
 <details>
 <summary>Instructions...</summary>
 <br />
+
 ## Setting up
 
 The server can be run locally and also deployed to Heroku. You will need to register your own Spotify app and set the credentials in a couple of config files. For that:
 
-1. Create an application on [Spotify's Developer Site](https://developer.spotify.com/my-applications/).
+1. Create an application on [Spotify's Developer Site](https://developer.spotify.com/my-applications/)
 
-2. Add as redirect uris both http://localhost:3000/auth/callback (for development) and <production_domain>/auth/callback (if you want to deploy your app somewhere).
+2. Add both http://localhost:3000/auth/callback (for development) and <production_domain>/auth/callback (if you want to deploy your app somewhere) as redirect uris
 
 3. Create a `.env` file in the root of the project with the following variables;
 
@@ -66,7 +67,7 @@ When running on production, run `npm run build && npm run start`.
 
 - Current Bugs: none reported...
 - Current Issues:
-- -Manage end-queue()...
+- - Manage end-queue()...
 
 ### What's Next...
 
