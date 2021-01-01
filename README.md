@@ -4,6 +4,8 @@ Listen Along is bringing back listening rooms. Intimate opportunities to share a
 
 <!-- **Link to site:** https://tytysam.github.io/TheBoys_Supe-r_Destruction/ -->
 
+---
+
 ## User Stories
 
 - User + one or more friends can all visit the same “Listening Room” together
@@ -11,13 +13,13 @@ Listen Along is bringing back listening rooms. Intimate opportunities to share a
 
 ### Technologies used:
 
-React.js | Node.js | Express.js
-
-Socket.io | Redux | Bootstrap
-
-Spotify Web API
-
----
+- React.js
+- Node.js
+- Express.js
+- Socket.io
+- Redux
+- Bootstrap
+- Spotify Web API
 
 ## Roadmap:
 
@@ -25,7 +27,7 @@ Spotify Web API
 
 - Current Bugs: none reported...
 - Current Issues:
-- - Manage end-queue()...
+  - Manage end-queue( )...
 
 ### What's Next...
 
