@@ -1,13 +1,31 @@
-# LSTN ALNG - A collaborative listening room using Spotify
+# LSTN ALNG - A Spotify-based listening room for you and your friends
 
-This project is a site where multiple users can propose songs, vote for them, and listen to the queue together, synchronously via Spotify.
+Listen Along is bringing back listening rooms. Intimate opportunities to share music with your friends. A shared queue can be added to and edited by anyone present in the listening room. Vote songs up the queue and jam synchronously together—-even when you can't be together.
+
+<!-- **Link to site:** https://tytysam.github.io/TheBoys_Supe-r_Destruction/ -->
 
 ## User Stories
 
-• User + one or more friends can all visit the same “Listening Room” together
+- User + one or more friends can all visit the same “Listening Room” together
+- There will be an active song queue that anyone in the room can edit and add to and have it be played synchronously across all devices via Spotify
 
-• There will be an active song queue that anyone in the room can edit and add to and have it be played synchronously across all devices via Spotify.
+### Technologies used:
 
+- React.js
+- Node.js
+- Express.js
+- Socket.io
+- Redux
+- Bootstrap
+- Spotify Web API
+
+---
+
+## Install:
+
+<details>
+<summary>Instructions...</summary>
+<br />
 ## Setting up
 
 The server can be run locally and also deployed to Heroku. You will need to register your own Spotify app and set the credentials in a couple of config files. For that:
@@ -40,6 +58,17 @@ During development, run `npm run dev`.
 
 When running on production, run `npm run build && npm run start`.
 
-## Next Edits:
+</details>
 
-• Include a chat box for each room.
+## Roadmap:
+
+### Adress ongoing bugs and issues:
+
+- Current Bugs: none reported...
+- Current Issues:
+- -Manage end-queue()...
+
+### What's Next...
+
+- Multiple rooms
+- Build-out chatbox functionality for each room
