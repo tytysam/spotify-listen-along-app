@@ -9,10 +9,12 @@ export default ({ index, item, session, onRemoveItem, onVoteUp }) => {
     item.voters &&
     session.user &&
     item.voters.filter((voter) => voter.id === session.user.id).length === 0 ? (
+      // *** to-do: find an arrow symbol to use..?
       <button onClick={onVoteUp}> ▲ </button>
     ) : null;
   return (
     <tr>
+      {/* *** Let's fine-tune with inline styles here... */}
       <td style={{ paddingRight: "10px" }}>
         <img src={item.track.album.images[2].url} width="40" height="40" />
       </td>

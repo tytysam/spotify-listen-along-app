@@ -1,3 +1,4 @@
+// REF: https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers
 // * note: Reducers are functions that calculate a new state value based on previous state + an action
 
 import {
@@ -6,6 +7,10 @@ import {
   UPDATE_TOKEN_SUCCESS,
   UPDATE_CURRENT_USER,
 } from "../constants/ActionTypes.js";
+
+// ================= //
+//   SESSION SLICE   //
+// ================= //
 
 const initialState = {
   refresh_token: null,

@@ -1,3 +1,6 @@
+// REF: https://react-redux.js.org/using-react-redux/connect-mapdispatch
+// REF: https://react-redux.js.org/using-react-redux/connect-mapstate
+
 import React from "react";
 import { connect } from "react-redux";
 
@@ -67,12 +70,14 @@ class Devices extends React.PureComponent {
   }
 }
 
+// Dispatch actions with mapDispatchToProps
 const mapDispatchToProps = (dispatch) => ({
   fetchAvailableDevices: (index) => dispatch(fetchAvailableDevices(index)),
   transferPlaybackToDevice: (deviceId) =>
     dispatch(transferPlaybackToDevice(deviceId)),
 });
 
+// Extract data with mapStateToProps
 const mapStateToProps = (state) => ({
   isFetching: getIsFetchingDevices(state),
   devices: getDevices(state),

@@ -1,3 +1,5 @@
+// REF: https://developer.spotify.com/documentation/web-api/reference/browse/get-recommendations/
+
 class Robot {
   constructor(options) {
     this.image = options.image || "/images/robot-icon.png";
@@ -35,7 +37,7 @@ class Robot {
       images: [{ url: this.image }],
       type: "robot",
       socketIdArray: [],
-      // *** to-do ==> add this attribute in order to be compatible with other true users...
+      // *** to-do: add ??? attributes in order to be compatible with other true users...
     };
   }
 }

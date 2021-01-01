@@ -1,6 +1,11 @@
+// REF: https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers
 // * note: Reducers are functions that calculate a new state value based on previous state + an action
 
 import { UPDATE_USERS } from "../constants/ActionTypes.js";
+
+// ================= //
+//    USERS SLICE    //
+// ================= //
 
 const initialState = [
   {

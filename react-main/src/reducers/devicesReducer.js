@@ -1,3 +1,5 @@
+// REF: https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers
+// REF: https://developer.spotify.com/documentation/web-api/guides/using-connect-web-api/
 // * note: Reducers are functions that calculate a new state value based on previous state + an action
 
 import {
@@ -5,6 +7,10 @@ import {
   FETCH_AVAILABLE_DEVICES_ERROR,
   FETCH_AVAILABLE_DEVICES_SUCCESS,
 } from "../constants/ActionTypes.js";
+
+// ================= //
+//   DEVICES SLICE   //
+// ================= //
 
 const initialState = {
   isFetching: false,

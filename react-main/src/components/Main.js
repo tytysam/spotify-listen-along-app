@@ -1,3 +1,6 @@
+// REF: https://react-redux.js.org/using-react-redux/connect-mapdispatch
+// REF: https://react-redux.js.org/using-react-redux/connect-mapstate
+
 import React from "react";
 import { connect } from "react-redux";
 
@@ -49,6 +52,7 @@ class Main extends React.Component {
   }
 }
 
+// Extract data with mapStateToProps
 const mapStateToProps = (state) => ({
   playing: state.playback,
   queue: state.queue,
@@ -56,4 +60,4 @@ const mapStateToProps = (state) => ({
   session: state.session,
 });
 
-export default connect(initStore, mapStateToProps, null)(Main);
+export default connect(null, mapStateToProps)(Main);

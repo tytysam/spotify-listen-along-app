@@ -3,9 +3,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 
-import { store } from "./store/store.js";
+import { initStore } from "./store/store.js";
 import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
+
+// initStore() initiates an instance of our store and sets our initial state (...essentially the same as configureStore()?)
+const store = initStore();
 
 ReactDOM.render(
   <React.StrictMode>

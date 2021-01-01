@@ -1,5 +1,9 @@
+// REF: https://react-redux.js.org/using-react-redux/connect-mapdispatch
+// REF: https://react-redux.js.org/using-react-redux/connect-mapstate
+
 import React from "react";
 import { connect } from "react-redux";
+
 import { login } from "../actions/sessionActions.js";
 import { mutePlayback, unmutePlayback } from "../actions/playbackActions.js";
 
@@ -13,7 +17,7 @@ const getNameFromUser = (user) => {
 
 const Header = ({ session, muted, mutePlayback, unmutePlayback, login }) => (
   <div className="header-container">
-    {/* *** to-do: ADD YOUR LINKS, BRO! Do you actually wanna do an about page? */}
+    {/* *** to-do: ADD YOUR LINKS, BRO! Do you actually wanna do an about page? *** */}
     <a className="link-base main-link">
       <img src="" />
     </a>
@@ -62,12 +66,14 @@ const Header = ({ session, muted, mutePlayback, unmutePlayback, login }) => (
   </div>
 );
 
+// Dispatch actions with mapDispatchToProps
 const mapDispatchToProps = (dispatch) => ({
   login: () => dispatch(login()),
   mutePlayback: () => dispatch(mutePlayback()),
   unmutePlayback: () => dispatch(unmutePlayback()),
 });
 
+// Extract data with mapStateToProps
 const mapStateToProps = (state) => ({
   session: state.session,
   muted: state.playback.muted,

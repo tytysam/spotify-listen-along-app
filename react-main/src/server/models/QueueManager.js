@@ -1,5 +1,9 @@
 const fs = require("fs");
 
+// ================= //
+//   QUEUE MANAGER   //
+// ================= //
+
 class QueueManager {
   constructor(options) {
     this.playingContext = {

@@ -1,3 +1,6 @@
+// REF: https://react-redux.js.org/using-react-redux/connect-mapdispatch
+// REF: https://react-redux.js.org/using-react-redux/connect-mapstate
+
 import React from "react";
 import { connect } from "react-redux";
 
@@ -7,6 +10,7 @@ import { queueTrack } from "../actions/queueActions.js";
 // ================= //
 //   SEARCH RESULTS  //
 // ================= //
+// Use component in ADD TO QUEUE render directly below
 
 class ResultsList extends React.Component {
   render() {
@@ -130,12 +134,14 @@ class AddToQueue extends React.Component {
   }
 }
 
+// Dispatch actions with mapDispatchToProps
 const mapDispatchToProps = (dispatch) => ({
   queueTrack: (text) => dispatch(queueTrack(text)),
   searchTracks: (query) => dispatch(searchTracks(query)),
   searchTracksReset: () => dispatch(searchTracksReset()),
 });
 
+// Extract data with mapStateToProps
 const mapStateToProps = (state) => ({
   search: state.search,
 });

@@ -1,3 +1,4 @@
+// REF: https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers
 // * note: Reducers are functions that calculate a new state value based on previous state + an action
 
 import {
@@ -5,6 +6,10 @@ import {
   SEARCH_TRACKS_SUCCESS,
   SEARCH_TRACKS_RESET,
 } from "../constants/ActionTypes.js";
+
+// ================= //
+//   SEARCH SLICE    //
+// ================= //
 
 const initialState = {};
 

@@ -1,4 +1,11 @@
-const uuidV4 = require("uuid/v4");
+// REF: https://www.npmjs.com/package/uuid
+// * note: a track uuid contains track index within the playlist, track uri, and track name
+
+const { v4: uuidV4 } = require("uuid");
+
+// ================= //
+//    QUEUE ITEM     //
+// ================= //
 
 class QueueItem {
   constructor(options = {}) {

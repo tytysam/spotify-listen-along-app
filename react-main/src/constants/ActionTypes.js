@@ -1,4 +1,5 @@
 // REF: https://redux.js.org/tutorials/fundamentals/part-1-overview
+// REF: https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers
 
 // * note: according to @dan_abramov... creating all of our constants here has a few benefits:
 // ==> • It helps keep the naming consistent because all action types are gathered in a single place

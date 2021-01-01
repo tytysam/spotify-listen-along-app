@@ -1,3 +1,4 @@
+// REF: https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers
 // * note: Reducers are functions that calculate a new state value based on previous state + an action
 
 import { combineReducers } from "redux";
@@ -8,6 +9,10 @@ import queueReducer from "./queueReducer.js";
 import searchReducer from "./searchReducer.js";
 import sessionReducer from "./sessionReducer.js";
 import usersReducer from "./usersReducer.js";
+
+// ================= //
+//   ROOT REDUCER    //
+// ================= //
 
 export const reducers = () => {
   // pass through an object containing our slice reducers...

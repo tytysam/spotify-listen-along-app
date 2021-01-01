@@ -1,3 +1,6 @@
+// REF: https://react-redux.js.org/using-react-redux/connect-mapdispatch
+// REF: https://react-redux.js.org/using-react-redux/connect-mapstate
+
 import React from "react";
 import { connect } from "react-redux";
 
@@ -39,11 +42,13 @@ class Queue extends React.PureComponent {
   }
 }
 
+// Dispatch actions with mapDispatchToProps
 const mapDispatchToProps = (dispatch) => ({
   voteUp: (id) => dispatch(voteUp(id)),
   queueRemoveTrack: (id) => dispatch(queueRemoveTrack(id)),
 });
 
+// Extract data with mapStateToProps
 const mapStateToProps = (state) => ({
   queue: state.queue,
 });

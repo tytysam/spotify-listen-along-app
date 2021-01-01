@@ -1,3 +1,6 @@
+// REF: https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+// REF: https://medium.com/@ItsMeDannyZ/how-to-build-a-progress-bar-with-react-8c5e79731d1f
+
 import React from "react";
 
 // ================= //
@@ -42,6 +45,7 @@ class NowPlaying extends React.PureComponent {
   }
 
   render() {
+    // Store current song's current position for progress bar
     const percentage =
       +(
         (this.state.currentPosition * 100) /
