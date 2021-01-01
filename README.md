@@ -11,15 +11,26 @@ Listen Along is bringing back listening rooms. Intimate opportunities to share a
 
 ### Technologies used:
 
-- React.js
-- Node.js
-- Express.js
-- Socket.io
-- Redux
-- Bootstrap
-- Spotify Web API
+React.js | Node.js | Express.js
+
+Socket.io | Redux | Bootstrap
+
+Spotify Web API
 
 ---
+
+## Roadmap:
+
+### Adress ongoing bugs and issues:
+
+- Current Bugs: none reported...
+- Current Issues:
+- - Manage end-queue()...
+
+### What's Next...
+
+- Multiple rooms
+- Build-out chatbox functionality for each room
 
 ## Install:
 
@@ -60,16 +71,3 @@ During development, run `npm run dev`.
 When running on production, run `npm run build && npm run start`.
 
 </details>
-
-## Roadmap:
-
-### Adress ongoing bugs and issues:
-
-- Current Bugs: none reported...
-- Current Issues:
-- - Manage end-queue()...
-
-### What's Next...
-
-- Multiple rooms
-- Build-out chatbox functionality for each room
