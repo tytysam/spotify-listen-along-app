@@ -60,4 +60,4 @@ const mapStateToProps = (state) => ({
   session: state.session,
 });
 
-export default connect(null, mapStateToProps)(Main);
+export default connect(initStore, mapStateToProps, null)(Main);

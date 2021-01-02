@@ -21,7 +21,7 @@ const Header = ({ session, muted, mutePlayback, unmutePlayback, login }) => (
     <a className="link-base main-link">
       <img src="" />
     </a>
-    <a className="link-base">ABOUT</a>
+    {/* <a className="link-base">ABOUT</a> */}
     {session.user ? (
       <div className="media user-header">
         <div className="media__img">

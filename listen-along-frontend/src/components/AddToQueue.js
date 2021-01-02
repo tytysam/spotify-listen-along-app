@@ -10,7 +10,7 @@ import { queueTrack } from "../actions/queueActions.js";
 // ================= //
 //   SEARCH RESULTS  //
 // ================= //
-// Use component in ADD TO QUEUE render directly below
+// Use SEARCH RESULTS component in ADD TO QUEUE render directly below
 
 class ResultsList extends React.Component {
   render() {

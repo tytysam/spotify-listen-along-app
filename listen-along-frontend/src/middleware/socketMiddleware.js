@@ -22,7 +22,7 @@ import io from "socket.io-client";
 // ==> • socket.emit() sends our event
 // ==> • socket.on() receives our event by registering a listener
 
-var socket = null;
+let socket = null;
 
 const getIdFromTrackString = (trackString = "") => {
   let matches = trackString.match(/^https:\/\/open\.spotify\.com\/track\/(.*)/);

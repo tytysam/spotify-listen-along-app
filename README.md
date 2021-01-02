@@ -6,11 +6,6 @@ Listen Along is bringing back listening rooms. Intimate opportunities to share a
 
 ---
 
-## User Stories
-
-- User + one or more friends can all visit the same “Listening Room” together
-- There will be an active song queue that anyone in the room can edit and add to and have it be played synchronously across all devices via Spotify
-
 ### Technologies used:
 
 - React.js
@@ -20,6 +15,11 @@ Listen Along is bringing back listening rooms. Intimate opportunities to share a
 - Redux
 - Bootstrap
 - Spotify Web API
+
+## User Stories
+
+- User + one or more friends can all visit the same “Listening Room” together
+- There will be an active song queue that anyone in the room can edit and add to and have it be played synchronously across all devices via Spotify
 
 ## Roadmap:
 

@@ -1,3 +1,5 @@
+// REF: https://redux.js.org/tutorials/fundamentals/part-5-ui-react
+
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
