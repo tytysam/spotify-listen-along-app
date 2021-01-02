@@ -21,19 +21,6 @@ Listen Along is bringing back listening rooms. Intimate opportunities to share a
 - User + one or more friends can all visit the same “Listening Room” together
 - There will be an active song queue that anyone in the room can edit and add to and have it be played synchronously across all devices via Spotify
 
-## Roadmap:
-
-### Adress ongoing bugs and issues:
-
-- Current Bugs: none reported...
-- Current Issues:
-  - Manage end-queue( )...
-
-### What's Next...
-
-- Multiple rooms
-- Build-out chatbox functionality for each room
-
 ## Install:
 
 <details>
