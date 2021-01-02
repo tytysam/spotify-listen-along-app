@@ -16,9 +16,9 @@ import * as Config from "../config/app.js";
 
 const SPOTIFY_API_BASE = "https://api.spotify.com/v1";
 
-// ================= //
-//     SESSION       //
-// ================= //
+// ================== //
+//      SESSION       //
+// ================== //
 
 const getCurrentUser = () => (dispatch, getState) =>
   fetch(`${SPOTIFY_API_BASE}/me`, {

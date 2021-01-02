@@ -3,9 +3,9 @@
 
 import { UPDATE_USERS } from "../constants/ActionTypes.js";
 
-// ================= //
-//    USERS SLICE    //
-// ================= //
+// ================== //
+//     USERS SLICE    //
+// ================== //
 
 const initialState = [
   {

@@ -9,9 +9,9 @@ import { playTrack, playTrackSuccess } from "../actions/playbackActions.js";
 
 const SPOTIFY_API_BASE = "https://api.spotify.com/v1";
 
-// ================= //
-//     PLAYBACK      //
-// ================= //
+// ================== //
+//      PLAYBACK      //
+// ================== //
 
 export default (store) => (next) => (action) => {
   const result = next(action);

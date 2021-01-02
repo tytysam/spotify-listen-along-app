@@ -10,9 +10,9 @@ import searchReducer from "./searchReducer.js";
 import sessionReducer from "./sessionReducer.js";
 import usersReducer from "./usersReducer.js";
 
-// ================= //
-//   ROOT REDUCER    //
-// ================= //
+// ================== //
+//    ROOT REDUCER    //
+// ================== //
 
 export const reducers = () => {
   // pass through an object containing our slice reducers...

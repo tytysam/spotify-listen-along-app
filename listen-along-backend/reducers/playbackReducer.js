@@ -10,9 +10,9 @@ import {
   UPDATE_NOW_PLAYING,
 } from "../constants/ActionTypes.js";
 
-// ================= //
-//  PLAYBACK SLICE   //
-// ================= //
+// ================== //
+//   PLAYBACK SLICE   //
+// ================== //
 
 const initialState = {
   muted: false,

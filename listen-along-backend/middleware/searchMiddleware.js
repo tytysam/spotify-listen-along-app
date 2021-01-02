@@ -8,9 +8,9 @@ import { searchTracksSuccess } from "../actions/searchActions.js";
 
 const SPOTIFY_API_BASE = "https://api.spotify.com/v1";
 
-// ================= //
-//      SEARCH       //
-// ================= //
+// ================== //
+//       SEARCH       //
+// ================== //
 
 const searchTracks = (query) => (dispatch, getState) => {
   // *** FOUND THE BELOW RE:  *wildcards*  ON STACK OVERFLOW AS A "trick to improve search results"

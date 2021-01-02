@@ -2,6 +2,10 @@
 // REF: https://developer.spotify.com/documentation/web-api/reference/browse/get-recommendations/
 // REF: https://stackoverflow.com/questions/17874851/can-i-use-the-spotify-recommendation-intelligence-in-an-app
 
+// ======================= //
+//    RECOMMENDER ROBOT    //
+// ======================= //
+
 class Robot {
   constructor(options) {
     this.image = options.image || "/images/robot-icon.png";

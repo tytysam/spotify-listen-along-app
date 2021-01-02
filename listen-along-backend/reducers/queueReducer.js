@@ -3,9 +3,9 @@
 
 import { UPDATE_QUEUE } from "../constants/ActionTypes.js";
 
-// ================= //
-//    QUEUE SLICE    //
-// ================= //
+// ================== //
+//     QUEUE SLICE    //
+// ================== //
 
 const initialState = [];
 

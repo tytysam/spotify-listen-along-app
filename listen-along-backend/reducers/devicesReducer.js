@@ -8,9 +8,9 @@ import {
   FETCH_AVAILABLE_DEVICES_SUCCESS,
 } from "../constants/ActionTypes.js";
 
-// ================= //
-//   DEVICES SLICE   //
-// ================= //
+// ================== //
+//    DEVICES SLICE   //
+// ================== //
 
 const initialState = {
   isFetching: false,

@@ -3,9 +3,9 @@
 
 const { v4: uuidV4 } = require("uuid");
 
-// ================= //
-//    QUEUE ITEM     //
-// ================= //
+// ================== //
+//     QUEUE ITEM     //
+// ================== //
 
 class QueueItem {
   constructor(options = {}) {

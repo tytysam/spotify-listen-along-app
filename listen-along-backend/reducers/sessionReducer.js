@@ -8,9 +8,9 @@ import {
   UPDATE_CURRENT_USER,
 } from "../constants/ActionTypes.js";
 
-// ================= //
-//   SESSION SLICE   //
-// ================= //
+// ================== //
+//    SESSION SLICE   //
+// ================== //
 
 const initialState = {
   refresh_token: null,

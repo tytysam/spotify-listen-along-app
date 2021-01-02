@@ -3,7 +3,7 @@
 import * as types from "../constants/ActionTypes.js";
 
 // =============== //
-//     SESSION     //
+//    SESSION      //
 // =============== //
 export const load = () => ({ type: types.LOAD });
 

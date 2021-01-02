@@ -5,6 +5,7 @@ import * as types from "../constants/ActionTypes.js";
 // =============== //
 //  FETCH DEVICES  //
 // =============== //
+
 export const fetchAvailableDevices = () => ({
   type: types.FETCH_AVAILABLE_DEVICES,
 });

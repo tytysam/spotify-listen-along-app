@@ -15,9 +15,9 @@ import Config from "../config/app.js";
 
 import io from "socket.io-client";
 
-// ================= //
-//      SOCKET       //
-// ================= //
+// ================== //
+//       SOCKET       //
+// ================== //
 // * note: The socket object on both sides (server + client) extends the EventEmitter class, so...
 // ==> • socket.emit() sends our event
 // ==> • socket.on() receives our event by registering a listener

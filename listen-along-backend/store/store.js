@@ -17,9 +17,9 @@ import { socketMiddleware } from "../middleware/socketMiddleware.js";
 
 import { load } from "../actions/sessionActions.js";
 
-// ================= //
-//       STORE       //
-// ================= //
+// ================== //
+//        STORE       //
+// ================== //
 
 export const initStore = (initialState = {}) => {
   const store = createStore(

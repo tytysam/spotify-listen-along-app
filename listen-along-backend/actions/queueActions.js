@@ -6,7 +6,7 @@ import Config from "../config/app.js";
 import * as types from "../constants/ActionTypes.js";
 
 // =============== //
-//      QUEUE      //
+//     QUEUE       //
 // =============== //
 export const queueTrack = (id) => ({ type: types.QUEUE_TRACK, id });
 

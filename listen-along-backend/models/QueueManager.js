@@ -1,8 +1,8 @@
 const fs = require("fs");
 
-// ================= //
-//   QUEUE MANAGER   //
-// ================= //
+// ================== //
+//    QUEUE MANAGER   //
+// ================== //
 
 class QueueManager {
   constructor(options) {

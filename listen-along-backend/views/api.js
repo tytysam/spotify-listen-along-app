@@ -20,9 +20,9 @@ const spotifyApi = new SpotifyWebAPI({
 
 const Router = express.Router;
 
-// ================= //
-//        AUTH       //
-// ================= //
+// ================== //
+//        AUTH        //
+// ================== //
 
 let accessToken = null;
 

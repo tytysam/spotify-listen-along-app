@@ -3,7 +3,7 @@
 import * as types from "../constants/ActionTypes.js";
 
 // =============== //
-//      SEARCH     //
+//     SEARCH      //
 // =============== //
 export const searchTracks = (query) => ({ type: types.SEARCH_TRACKS, query });
 

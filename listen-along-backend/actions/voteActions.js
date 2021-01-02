@@ -3,7 +3,7 @@
 import * as types from "../constants/ActionTypes.js";
 
 // =============== //
-//      VOTING     //
+//     VOTING      //
 // =============== //
 export const voteUp = (id) => ({
   type: types.VOTE_UP,

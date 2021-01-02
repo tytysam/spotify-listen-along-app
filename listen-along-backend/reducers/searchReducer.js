@@ -7,9 +7,9 @@ import {
   SEARCH_TRACKS_RESET,
 } from "../constants/ActionTypes.js";
 
-// ================= //
-//   SEARCH SLICE    //
-// ================= //
+// ================== //
+//    SEARCH SLICE    //
+// ================== //
 
 const initialState = {};
 
