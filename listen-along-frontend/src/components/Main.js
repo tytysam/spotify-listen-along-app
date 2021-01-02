@@ -5,10 +5,10 @@ import React from "react";
 import { connect } from "react-redux";
 
 import Layout from "../components/MyLayout.js";
-import { initStore } from "../store/store";
-import { fetchQueue } from "../actions/queueActions.js";
-import { fetchUsers } from "../actions/usersActions.js";
-import { fetchPlayingContext } from "../actions/playbackActions.js";
+import { initStore } from "../../../listen-along-backend/store/store";
+import { fetchQueue } from "../../../listen-along-backend/actions/queueActions.js";
+import { fetchUsers } from "../../../listen-along-backend/actions/usersActions.js";
+import { fetchPlayingContext } from "../../../listen-along-backend/actions/playbackActions.js";
 import Users from "../components/Users.js";
 import Queue from "../components/Queue.js";
 import AddToQueue from "../components/AddToQueue.js";

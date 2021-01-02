@@ -4,12 +4,15 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { searchTracks, searchTracksReset } from "../actions/searchActions.js";
-import { queueTrack } from "../actions/queueActions.js";
+import {
+  searchTracks,
+  searchTracksReset,
+} from "../../../listen-along-backend/actions/searchActions.js";
+import { queueTrack } from "../../../listen-along-backend/actions/queueActions.js";
 
-// ================= //
-//   SEARCH RESULTS  //
-// ================= //
+// ================== //
+//   SEARCH RESULTS   //
+// ================== //
 // Use SEARCH RESULTS component in ADD TO QUEUE render directly below
 
 class ResultsList extends React.Component {

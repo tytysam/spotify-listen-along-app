@@ -5,8 +5,8 @@ import React from "react";
 import { connect } from "react-redux";
 
 import QueueItem from "./QueueItem.js";
-import { queueRemoveTrack } from "../actions/queueActions.js";
-import { voteUp } from "../actions/voteActions.js";
+import { queueRemoveTrack } from "../../../listen-along-backend/actions/queueActions.js";
+import { voteUp } from "../../../listen-along-backend/actions/voteActions.js";
 
 // ================= //
 //       QUEUE       //
