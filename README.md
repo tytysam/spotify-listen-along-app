@@ -27,7 +27,7 @@ Listen Along is bringing back listening rooms. Intimate opportunities to share a
 <summary>Instructions...</summary>
 <br />
 
-## Setting up
+### Setting up
 
 The server can be run locally and also deployed to Heroku. You will need to register your own Spotify app and set the credentials in a couple of config files. For that:
 
@@ -41,7 +41,7 @@ The server can be run locally and also deployed to Heroku. You will need to regi
    - `CLIENT_ID`
    - `CLIENT_SECRET`
 
-Example:
+For Example:
 
 ```
 HOST=http://localhost:3000
@@ -49,11 +49,11 @@ CLIENT_ID=<your_client_id>
 CLIENT_SECRET=<your_client_secret>
 ```
 
-## Dependencies
+### Dependencies
 
 Install the dependencies running `npm install`.
 
-## Running
+### Running
 
 During development, run `npm run dev`.
 

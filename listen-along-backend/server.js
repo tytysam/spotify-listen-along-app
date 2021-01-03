@@ -8,11 +8,6 @@ const server = require("http").Server(app);
 const io = require("socket.io")(server);
 const compression = require("compression");
 
-// //  LIFTED FROM A NEXT.js APPLICATON... HOW SHOULD I REPLACE??
-// const dev = process.env.NODE_ENV !== "production";
-// const nextApp = next({ dev });
-// const nextHandler = nextApp.getRequestHandler();
-
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 
